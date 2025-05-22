@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCar, FaTruck, FaBus, FaBiking, FaTractor, FaMotorcycle, FaMapMarkerAlt, FaShieldAlt, FaBolt, FaWifi, FaLock, FaRoad, FaUserCheck, FaGasPump, FaCogs, FaStar, FaChartLine, FaExclamationTriangle, FaBell, FaClock, FaCloud, FaSnowflake } from "react-icons/fa";
+import { FaCar, FaTruck, FaBus, FaBiking, FaTractor, FaMotorcycle, FaMapMarkerAlt, FaShieldAlt, FaBolt, FaWifi, FaLock, FaRoad, FaUserCheck, FaGasPump, FaCogs, FaStar, FaChartLine, FaExclamationTriangle, FaBell, FaClock, FaSnowflake } from "react-icons/fa";
 
 const slides = [
   {

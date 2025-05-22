@@ -1,5 +1,6 @@
 "use client"
-
+import React from "react"
+import Image from "next/image"
 const vehicleImages = [
   "/LocationTrack/car.webp",
   "/LocationTrack/truck.jpg",
@@ -45,9 +46,11 @@ export default function VehicleMarquee() {
           {vehicleImages.concat(vehicleImages).map((img, idx) => (
             <div key={img + idx} className="flex flex-col items-center group">
               <div className="relative">
-                <img
+                <Image
                   src={img || "/placeholder.svg"}
                   alt="Vehicle"
+                  width={192}
+                  height={128}
                   className="w-36 h-24 md:w-48 md:h-32 object-cover rounded-2xl border-4 border-white shadow-xl group-hover:scale-110 group-hover:shadow-yellow-400 transition-all duration-300 bg-white"
                   loading="lazy"
                 />

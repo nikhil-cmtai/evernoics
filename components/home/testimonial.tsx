@@ -54,16 +54,16 @@ const marqueeVariants = {
 const Testimonials = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+  // Remove the following unused variable:
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.2
+  //     }
+  //   }
+  // };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },

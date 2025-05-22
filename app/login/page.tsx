@@ -143,7 +143,7 @@ const LoginPage: React.FC = () => {
               type="submit"
               className="w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-[var(--color-primary)] hover:bg-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-primary)] transition-colors"
             >
-              Sign in
+              <h1>Let&apos;s Login</h1>
             </motion.button>
           </form>
 
@@ -153,7 +153,7 @@ const LoginPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="mt-6 text-center text-sm text-gray-600"
           >
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="#" className="font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)]">
               Sign up
             </a>

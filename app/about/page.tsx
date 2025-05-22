@@ -4,7 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Testimonials from '@/components/home/testimonial';
 import { FaStar, FaCarAlt, FaSatelliteDish, FaChartBar, FaCheckCircle } from 'react-icons/fa';
-import { MdSecurity, MdSupportAgent, MdDevices, MdDirectionsBus, MdAgriculture, MdConstruction, MdLocalShipping, MdPerson, MdLocalHospital, MdBusiness, MdSchool, MdLocationCity } from 'react-icons/md';
+import { MdSecurity, MdSupportAgent, MdDevices, MdAgriculture, MdConstruction, MdLocalShipping, MdPerson, MdLocalHospital, MdBusiness, MdSchool, MdLocationCity } from 'react-icons/md';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: {},
@@ -164,14 +165,17 @@ const AboutPage: React.FC = () => {
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.9, type: 'spring', stiffness: 60 }}
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
             alt="Location Track Premium GPS"
+            width={320}
+            height={400}
             className="w-full max-w-xs md:max-w-sm rounded-2xl shadow-lg object-cover"
             style={{
               border: '3px solid var(--color-primary)',
               background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'
             }}
+            priority
           />
         </motion.div>
       </motion.div>
@@ -349,7 +353,7 @@ const AboutPage: React.FC = () => {
           Our All-in-One Platform
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {platformFeatures.map((item, idx) => (
+          {platformFeatures.map((item) => (
             <motion.div
               key={item.title}
               variants={cardVariants}
@@ -374,13 +378,23 @@ const AboutPage: React.FC = () => {
         </div>
       </motion.div>
 
+      {/* 4. What We Can Track */}
+      {/* <motion.div variants={cardVariants} className="mb-14 w-full max-w-2xl mx-auto">
+        <motion.h2 className="text-2xl font-bold text-[#f97316] mb-3">
+          What We Can Track
+        </motion.h2>
+        <motion.p className="text-base md:text-lg text-gray-700">
+          <span className="font-semibold text-[var(--color-secondary)]">Almost every vehicle</span> — chahe 2-wheeler ho, car, truck, bus, heavy machine ya farm vehicle — hum sab track kar sakte hain.
+        </motion.p>
+      </motion.div> */}
+
       {/* 5. Industries We Serve */}
       <motion.div variants={containerVariants} className="mb-14 w-full">
         <motion.h2 variants={cardVariants} className="text-2xl font-bold text-[var(--color-primary)] mb-8">
           Industries We Serve
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {industries.map((item, idx) => (
+          {industries.map((item) => (
             <motion.div
               key={item.label}
               variants={cardVariants}
@@ -421,7 +435,7 @@ const AboutPage: React.FC = () => {
           Industries We Serve
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
-          {industries.map((item, idx) => (
+          {industries.map((item) => ( // <-- removed ", idx"
             <motion.div
               key={item.label}
               variants={cardVariants}
