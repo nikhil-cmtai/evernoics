@@ -47,9 +47,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-lg"
+          className="text-4xl md:text-6xl font-extrabold text-[var(--color-primary)] mb-4 drop-shadow-sm"
         >
-          Secure Track Control
+          Empowering Your Business with <span className="text-[var(--color-accent)]">Smart IT Solutions</span>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +65,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mb-10 text-lg md:text-xl font-medium text-gray-700 drop-shadow-sm"
         >
-          Stay in control of your vehicles — whether it's a single car or an entire fleet. Location Track offers real-time GPS tracking, anti-theft alerts, immobilization, and smart insights to keep your vehicles and your business safe.
+          Stay in control of your vehicles — whether it&apos;s a single car or an entire fleet. Location Track offers real-time GPS tracking, anti-theft alerts, immobilization, and smart insights to keep your vehicles and your business safe.
         </motion.p>
         <motion.button
           whileHover={{ scale: 1.06 }}

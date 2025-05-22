@@ -18,7 +18,7 @@ const Footer = () => (
   >
     <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-4">
       <div className="flex gap-4 mb-4 md:mb-0">
-        {socialLinks.map((s, i) => (
+        {socialLinks.map((s) => (
           <motion.a
             key={s.label}
             href={s.href}

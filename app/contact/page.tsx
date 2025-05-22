@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const ContactPage: React.FC = () => {
@@ -55,7 +55,7 @@ const ContactPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-yellow-600 mb-4"
           >
-            Let's Connect
+            Let&apos;s Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

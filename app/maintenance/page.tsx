@@ -19,7 +19,7 @@ const MaintenancePage: React.FC = () => {
         className="bg-white rounded-xl shadow-lg p-8 max-w-md w-full flex flex-col items-center"
       >
         <FaTools className="text-[3rem] md:text-[4rem] text-[var(--color-primary)] mb-4 animate-spin-slow" />
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[var(--color-primary)] mb-4 leading-tight">We'll Be Back Soon!</h1>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[var(--color-primary)] mb-4 leading-tight">We&apos;ll Be Back Soon!</h1>
         <p className="text-base md:text-lg text-[var(--color-foreground)] max-w-xl mb-8 font-medium leading-relaxed">
           Our website is currently undergoing <span className="font-semibold text-[var(--color-primary)]">scheduled maintenance</span>.<br />We appreciate your patience and will be back online shortly.
         </p>

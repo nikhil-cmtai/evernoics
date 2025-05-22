@@ -55,7 +55,7 @@ const HowWeAre: React.FC = () => (
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-yellow-600"
             >
-              India's Premier GPS Solution
+              India&apos;s Premier GPS Solution
             </motion.h2>
 
             <motion.p
