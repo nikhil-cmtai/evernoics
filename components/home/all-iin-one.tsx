@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { FaLaptopCode, FaMicrochip, FaChartBar } from "react-icons/fa"
 import type { Variants } from "framer-motion"
@@ -53,26 +54,24 @@ const iconFloat: Variants = {
 
 // Animated dots for the map visualization
 const Dots = () => {
+  const [positions, setPositions] = useState<{ left: number; top: number }[]>([])
+  useEffect(() => {
+    setPositions(Array.from({ length: 12 }).map(() => ({
+      left: Math.random() * 80 + 10,
+      top: Math.random() * 80 + 10,
+    })))
+  }, [])
+  if (!positions.length) return null
   return (
     <div className="relative w-full h-full">
-      {Array.from({ length: 12 }).map((_, i) => (
+      {positions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute w-3 h-3 rounded-full bg-orange-500"
-          style={{
-            left: `${Math.random() * 80 + 10}%`,
-            top: `${Math.random() * 80 + 10}%`,
-          }}
+          style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
           initial={{ opacity: 0.3, scale: 0.5 }}
-          animate={{
-            opacity: [0.3, 0.8, 0.3],
-            scale: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            repeat: Number.POSITIVE_INFINITY,
-            delay: Math.random() * 2,
-          }}
+          animate={{ opacity: [0.3, 0.8, 0.3], scale: [0.5, 1, 0.5] }}
+          transition={{ duration: Math.random() * 3 + 2, repeat: Number.POSITIVE_INFINITY, delay: Math.random() * 2 }}
         />
       ))}
     </div>
@@ -114,6 +113,34 @@ const Routes = () => {
             repeatDelay: 2,
           }}
         />
+      ))}
+    </>
+  )
+}
+
+const FloatingDataPoints = () => {
+  const [positions, setPositions] = useState<{ left: number; top: number }[]>([])
+  useEffect(() => {
+    setPositions(Array.from({ length: 5 }).map(() => ({
+      left: Math.random() * 70 + 15,
+      top: Math.random() * 70 + 15,
+    })))
+  }, [])
+  if (!positions.length) return null
+  const labels = ["Speed: 65 mph", "Fuel: 78%", "ETA: 14 min", "Distance: 12.4 mi", "Status: Active"]
+  return (
+    <>
+      {positions.map((pos, i) => (
+        <motion.div
+          key={`data-${i}`}
+          className="absolute bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md border border-orange-100 text-xs font-medium text-gray-700"
+          style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 + i * 0.2, duration: 0.5 }}
+        >
+          {labels[i]}
+        </motion.div>
       ))}
     </>
   )
@@ -220,24 +247,7 @@ const SplitFeatures: React.FC = () => (
             </motion.div>
 
             {/* Floating data points */}
-            {Array.from({ length: 5 }).map((_, i) => (
-              <motion.div
-                key={`data-${i}`}
-                className="absolute bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md border border-orange-100 text-xs font-medium text-gray-700"
-                style={{
-                  left: `${Math.random() * 70 + 15}%`,
-                  top: `${Math.random() * 70 + 15}%`,
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 0.5 + i * 0.2,
-                  duration: 0.5,
-                }}
-              >
-                {["Speed: 65 mph", "Fuel: 78%", "ETA: 14 min", "Distance: 12.4 mi", "Status: Active"][i]}
-              </motion.div>
-            ))}
+            <FloatingDataPoints />
 
             {/* Legend */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/80 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-orange-100">
