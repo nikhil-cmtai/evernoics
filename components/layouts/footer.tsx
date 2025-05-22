@@ -4,9 +4,9 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
-  { href: 'https://www.facebook.com/everonic', icon: <FaFacebookF />, label: 'Facebook' },
-  { href: 'https://www.instagram.com/everonic', icon: <FaInstagram />, label: 'Instagram' },
-  { href: 'https://www.linkedin.com/company/everonic', icon: <FaLinkedinIn />, label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/locationtrack.in/', icon: <FaFacebookF />, label: 'Facebook' },
+  { href: 'https://www.instagram.com/locationtrack.in/', icon: <FaInstagram />, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/company/locationtrack/', icon: <FaLinkedinIn />, label: 'LinkedIn' },
 ];
 
 const Footer = () => (
@@ -26,10 +26,19 @@ const Footer = () => (
             whileHover={{ scale: 1.2, rotate: 8 }}
             whileTap={{ scale: 0.95 }}
             className="text-2xl hover:text-[var(--color-accent)] transition"
+            target="_blank" rel="noopener noreferrer"
           >
             {s.icon}
           </motion.a>
         ))}
+      </div>
+      <div className="flex flex-col gap-1 text-sm md:text-base font-semibold text-white/90 items-center md:items-end">
+        <div>
+          <span className="font-bold">Email:</span> info@everonics.in, locationtracker21@gmail.com
+        </div>
+        <div>
+          <span className="font-bold">Contact:</span> +91 9984024365, +91 8948168024
+        </div>
       </div>
       <div className="flex gap-6 font-semibold">
         <a href="/terms" className="hover:text-[var(--color-accent)] transition">Terms</a>

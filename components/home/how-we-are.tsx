@@ -15,9 +15,9 @@ const HowWeAre: React.FC = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative"
+          className="relative flex justify-start"
         >
-          <div className="aspect-square max-w-lg mx-auto">
+          <div className="aspect-square max-w-2xl w-full ml-[-0px]">
             <Lottie
               animationData={locationAnimation}
               loop={true}

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaLinkedin, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,7 @@ const ContactPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
+    // Send form data to sid99310@gmail.com (backend integration required)
     console.log(formData);
   };
 
@@ -158,7 +159,8 @@ const ContactPage: React.FC = () => {
                   <FaPhone className="text-orange-600 text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                <p className="text-gray-600">+91 123 456 7890</p>
+                <p className="text-gray-600">+91 9984024365</p>
+                <p className="text-gray-600">+91 8948168024</p>
               </motion.div>
 
               <motion.div
@@ -169,7 +171,8 @@ const ContactPage: React.FC = () => {
                   <FaEnvelope className="text-orange-600 text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                <p className="text-gray-600">contact@locationtrack.com</p>
+                <p className="text-gray-600">info@everonics.in</p>
+                <p className="text-gray-600">locationtracker21@gmail.com</p>
               </motion.div>
 
               <motion.div
@@ -198,21 +201,10 @@ const ContactPage: React.FC = () => {
             {/* Social Links */}
             <div className="bg-white p-6 rounded-xl shadow-lg border border-orange-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 hover:bg-orange-200 transition-colors"
-                >
-                  <FaLinkedin className="text-xl" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 hover:bg-orange-200 transition-colors"
-                >
-                  <FaTwitter className="text-xl" />
-                </motion.a>
+              <div className="flex gap-4">
+                <a href="https://www.facebook.com/locationtrack.in/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-2xl text-blue-600 hover:text-blue-800 transition"><FaFacebookF /></a>
+                <a href="https://www.instagram.com/locationtrack.in/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl text-pink-500 hover:text-pink-700 transition"><FaInstagram /></a>
+                <a href="https://www.linkedin.com/company/locationtrack/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-2xl text-blue-800 hover:text-blue-900 transition"><FaLinkedin /></a>
               </div>
             </div>
 

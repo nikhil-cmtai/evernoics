@@ -22,8 +22,34 @@ const testimonials = [
     role: "Startup Founder",
     content: "This platform has transformed how we approach our business challenges.",
     image: "/testimonials/mike.jpg"
+  },
+  {
+    name: "Priya Verma",
+    role: "Product Manager",
+    content: "The user experience and support are top-notch. Highly recommended for any business!",
+    image: "/testimonials/priya.jpg"
+  },
+  {
+    name: "Ahmed Khan",
+    role: "Operations Head",
+    content: "Efficient, reliable, and innovative. Our workflow has never been smoother.",
+    image: "/testimonials/ahmed.jpg"
   }
 ];
+
+const marqueeVariants = {
+  animate: {
+    x: [0, -1000], // Adjust -1000 based on total width of testimonials
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 20,
+        ease: "linear"
+      }
+    }
+  }
+};
 
 const Testimonials = () => {
   const ref = useRef(null);
@@ -62,35 +88,37 @@ const Testimonials = () => {
           Trusted by Industry Leaders
         </motion.h2>
 
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200 mr-4">
-                  {/* Add image here if available */}
+        <div className="overflow-hidden">
+          <motion.div
+            ref={ref}
+            className="flex flex-row gap-8"
+            variants={marqueeVariants}
+            animate="animate"
+            style={{ width: "max-content" }}
+          >
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg min-w-[320px] max-w-xs"
+                variants={itemVariants}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4">
+                    {/* Add image here if available */}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{testimonial.name}</h3>
+                    <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold">{testimonial.name}</h3>
-                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                </div>
-              </div>
-              <p className="text-gray-700">{testimonial.content}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+                <p className="text-gray-700">{testimonial.content}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Testimonials; 
+export default Testimonials;
