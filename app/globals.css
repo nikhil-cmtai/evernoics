@@ -4,12 +4,12 @@
   --primary: #F37021;
   --secondary: #1A237E;
   --accent: #FFD600;
-  --background: #F5F5F5;
+  --background: #FFFFFF; /* Changed from #F5F5F5 to #FFFFFF */
   --foreground: #212121;
   --white: #FFFFFF;
 }
 
-@theme inline {
+:root {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);

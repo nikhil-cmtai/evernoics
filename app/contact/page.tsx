@@ -208,8 +208,13 @@ const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Map */}
-            <div className="rounded-xl overflow-hidden shadow-lg border border-orange-100">
+          
+          </motion.div>
+        </div>
+        
+      </div>
+        {/* Map moved below grid, full width */}
+        <div className="w-full max-w-7xl mx-auto mt-12 rounded-xl overflow-hidden shadow-lg border border-orange-100">
               <iframe
                 title="Office Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5989191055764!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1647881234567!5m2!1sen!2sin"
@@ -221,9 +226,6 @@ const ContactPage: React.FC = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </motion.div>
-        </div>
-      </div>
     </section>
   );
 };
