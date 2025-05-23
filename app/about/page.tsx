@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Testimonials from '@/components/home/testimonial';
-import { FaStar, FaCarAlt, FaSatelliteDish, FaChartBar, FaCheckCircle } from 'react-icons/fa';
-import { MdSecurity, MdSupportAgent, MdDevices, MdAgriculture, MdConstruction, MdLocalShipping, MdPerson, MdLocalHospital, MdBusiness, MdSchool, MdLocationCity } from 'react-icons/md';
-import Image from 'next/image';
+import { FaCarAlt, FaSatelliteDish, FaChartBar } from 'react-icons/fa';
+import { MdAgriculture, MdConstruction, MdLocalShipping, MdPerson, MdLocalHospital, MdBusiness, MdSchool, MdLocationCity } from 'react-icons/md';
+import { whyChooseUs } from './whyChooseUs';
 
 const containerVariants = {
   hidden: {},
@@ -29,59 +29,6 @@ const cardVariants = {
     }
   }
 };
-
-const whyChooseUs = [
-  {
-    icon: <FaStar className="text-yellow-500 text-2xl" />,
-    title: "All-in-One Comprehensive Solution",
-    desc: "High-quality hardware, powerful software, data analytics & expert support — sab kuch ek hi platform par. No more juggling multiple systems."
-  },
-  {
-    icon: <FaSatelliteDish className="text-blue-500 text-2xl" />,
-    title: "Cutting-Edge Technology",
-    desc: "Latest GPS & telematics technology with real-time tracking & monitoring."
-  },
-  {
-    icon: <FaChartBar className="text-purple-500 text-2xl" />,
-    title: "Smart Data Insights",
-    desc: "Driver behavior, fuel usage, fleet performance — sab kuch ka detailed analytics milta hai."
-  },
-  {
-    icon: <MdDevices className="text-pink-500 text-2xl" />,
-    title: "User-Friendly Interface",
-    desc: "Tech-savvy ho ya beginner, platform sabke liye easy to use hai."
-  },
-  {
-    icon: <FaCheckCircle className="text-green-500 text-2xl" />,
-    title: "Trusted Reliability",
-    desc: "Accurate location updates and dependable data, backed by advanced tracking systems."
-  },
-  {
-    icon: <MdBusiness className="text-indigo-500 text-2xl" />,
-    title: "Fully Customizable",
-    desc: "Har business alag hota hai, isliye hum solutions ko aapke operations ke hisaab se tailor karte hain."
-  },
-  {
-    icon: <MdSupportAgent className="text-orange-500 text-2xl" />,
-    title: "Dedicated Customer Support",
-    desc: "Setup se lekar support tak, hamari team hamesha help ke liye ready hai."
-  },
-  {
-    icon: <FaChartBar className="text-blue-400 text-2xl" />,
-    title: "Cost-Effective Operations",
-    desc: "Route optimization, fuel tracking, aur smart driving se cost bacha sakte ho."
-  },
-  {
-    icon: <MdSecurity className="text-red-500 text-2xl" />,
-    title: "Top-Notch Security",
-    desc: "Geofencing, immobilization & real-time alerts ke saath aapke assets hamesha safe rahenge."
-  },
-  {
-    icon: <MdSupportAgent className="text-yellow-600 text-2xl" />,
-    title: "24/7 Support",
-    desc: "Din ho ya raat — hamari support team har waqt available hai."
-  }
-];
 
 const platformFeatures = [
   {
@@ -138,7 +85,7 @@ const AboutPage: React.FC = () => {
       {/* 1. Introduction Section */}
       <motion.div
         variants={cardVariants}
-        className="mb-12 w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start text-left gap-10"
+        className="mb-12 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start text-left gap-10"
       >
         {/* Text Side */}
         <div className="flex-1">
@@ -158,24 +105,18 @@ const AboutPage: React.FC = () => {
             </p>
           </motion.div>
         </div>
-        {/* Image Side */}
+        {/* Image Side replaced with Lottie iframe */}
         <motion.div
           className="flex-1 flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.92, x: 60 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.9, type: 'spring', stiffness: 60 }}
         >
-          <Image
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80"
-            alt="Location Track Premium GPS"
-            width={320}
-            height={400}
-            className="w-full max-w-xs md:max-w-sm rounded-2xl shadow-lg object-cover"
-            style={{
-              border: '3px solid var(--color-primary)',
-              background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'
-            }}
-            priority
+          <iframe
+            src="https://lottie.host/embed/7020ed53-7713-4ec6-ad62-5d8545242974/2UtD1lD7vQ.lottie"
+            style={{ width: 420, height: 520, border: 'none', borderRadius: '1rem', background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' }}
+            allowFullScreen={false}
+            title="Location Track Animation"
           />
         </motion.div>
       </motion.div>
