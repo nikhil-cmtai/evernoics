@@ -10,7 +10,6 @@ const vehicleImages = [
   "/LocationTrack/activa.jpg",
   // Dummy vehicle images
   "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80", // jeep
-  "https://images.unsplash.com/photo-1511918984145-48de785d4c4e?auto=format&fit=crop&w=400&q=80", // sports car
   "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // truck
   "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=80", // bike
 ]
@@ -51,7 +50,8 @@ export default function VehicleMarquee() {
                   alt="Vehicle"
                   width={192}
                   height={128}
-                  className="w-36 h-24 md:w-48 md:h-32 object-cover rounded-2xl border-4 border-white shadow-xl group-hover:scale-110 group-hover:shadow-yellow-400 transition-all duration-300 bg-white"
+                  className={`w-36 h-24 md:w-48 md:h-32 rounded-2xl border-4 border-white shadow-xl group-hover:scale-110 group-hover:shadow-yellow-400 transition-all duration-300 bg-white
+                    ${img.includes('bike') || img.includes('activa') ? 'object-contain' : 'object-cover'}`}
                   loading="lazy"
                 />
                 {/* Glow effect on hover */}

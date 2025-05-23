@@ -390,8 +390,9 @@ const AboutPage: React.FC = () => {
           ))}
         </div>
       </motion.div>
-      <Testimonials />
-
+      <motion.div className="w-full my-12">
+  <Testimonials />
+</motion.div>
     </motion.section>
     
     

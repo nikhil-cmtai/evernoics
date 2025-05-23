@@ -88,10 +88,10 @@ const Testimonials = () => {
           Trusted by Industry Leaders
         </motion.h2>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden group">
           <motion.div
             ref={ref}
-            className="flex flex-row gap-8"
+            className="flex flex-row gap-8 group-hover:[animation-play-state:paused]"
             variants={marqueeVariants}
             animate="animate"
             style={{ width: "max-content" }}
@@ -99,7 +99,7 @@ const Testimonials = () => {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg min-w-[320px] max-w-xs"
+                className="bg-white p-6 rounded-lg shadow-lg min-w-[320px] max-w-xs my-4 cursor-pointer"
                 variants={itemVariants}
               >
                 <div className="flex items-center mb-4">
