@@ -67,7 +67,7 @@ export default function LocationTrackProcess() {
       number: 1,
       title: "Device Installation",
       description:
-        "Our certified technicians install high-performance GPS tracking devices into your vehicle or equipment. Installation is quick, clean, and does not tamper with your vehicle's original system.",
+        "Our certified technicians install high-performance GPS tracking devices into your vehicle or equipment. Installation is quick, clean, and does not tamper with your vehicle&apos;s original system.",
       icon: <Cpu className="w-full h-full" />,
       benefits: [
         "Plug-n-play options available",
@@ -261,7 +261,7 @@ export default function LocationTrackProcess() {
               Simple. Smart. Secure.
             </span>
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Here's How LocationTrack Works</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Here&apos;s How LocationTrack Works</h3>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -361,7 +361,7 @@ export default function LocationTrackProcess() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-700 mb-4 relative z-10">{step.description}</p>
+                  <p className="text-gray-700 mb-4 relative z-10">{step.description.replace(/'/g, "&apos;")}</p>
 
                   {/* Sub Items Grid */}
                   {step.subItems && (

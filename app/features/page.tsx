@@ -28,6 +28,8 @@ import {
   Truck,
   Car,
 } from "lucide-react"
+import Image from "next/image"
+import type { Variants } from 'framer-motion'
 
 export default function LocationTrackFeatures() {
   const containerRef = useRef(null)
@@ -395,7 +397,7 @@ export default function LocationTrackFeatures() {
                 {/* Background Glow Effect */}
                 <motion.div
                   className="absolute inset-0 rounded-3xl opacity-30 z-0"
-                  variants={glowVariants as any}
+                  variants={glowVariants as unknown as Variants}
                   animate="glow"
                 />
 
@@ -405,7 +407,7 @@ export default function LocationTrackFeatures() {
                     <div className="flex items-center gap-4 mb-4">
                       <motion.div
                         className={`w-14 h-14 rounded-xl bg-gradient-to-br ${features[activeFeature].color} p-3 text-white shadow-lg`}
-                        variants={pulseVariants as any}
+                        variants={pulseVariants as unknown as Variants}
                         animate="pulse"
                       >
                         {features[activeFeature].icon}
@@ -444,7 +446,7 @@ export default function LocationTrackFeatures() {
                   <div className="flex items-center justify-center relative">
                     <motion.div
                       className="w-full h-full max-h-[300px] rounded-2xl overflow-hidden shadow-lg relative"
-                      variants={floatVariants as any}
+                      variants={floatVariants as unknown as Variants}
                       animate="float"
                     >
                       {/* Animated Vehicle Icons */}
@@ -483,9 +485,11 @@ export default function LocationTrackFeatures() {
                         </motion.div>
                       </div>
 
-                      <img
+                      <Image
                         src={features[activeFeature].image}
                         alt={features[activeFeature].title}
+                        width={600}
+                        height={300}
                         className="w-full h-full object-cover"
                       />
 
