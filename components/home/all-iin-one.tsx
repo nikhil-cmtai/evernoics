@@ -156,7 +156,7 @@ const SplitFeatures: React.FC = () => (
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-16"
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-600">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
           All-in-One Platform
         </span>
       </motion.h2>

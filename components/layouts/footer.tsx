@@ -34,10 +34,10 @@ const Footer = () => (
       </div>
       <div className="flex flex-col gap-1 text-sm md:text-base font-semibold text-white/90 items-center md:items-end">
         <div>
-          <span className="font-bold">Email:</span> info@everonics.in, locationtracker21@gmail.com
+          <span className="font-bold">Email:</span> info@everonics.in
         </div>
         <div>
-          <span className="font-bold">Contact:</span> +91 9984024365, +91 8948168024
+          <span className="font-bold">Contact:</span> +91 9984024365
         </div>
       </div>
       <div className="flex gap-6 font-semibold">

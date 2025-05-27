@@ -152,17 +152,6 @@ export default function IndustriesWeServe() {
         </motion.div>
 
         <div className="text-center mb-16 relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="inline-block"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-gradient-to-r from-orange-200 to-orange-300 text-orange-800 mb-4">
-              Trusted by Industry Leaders
-            </span>
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -171,8 +160,9 @@ export default function IndustriesWeServe() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700"
           >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
             Industries We Serve
-          </motion.h2>
+          </span>          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -19,12 +19,8 @@ const Topbar = () => (
     <div className="container mx-auto flex justify-between items-center px-4 py-1 min-h-8">
       <div className="flex gap-2 items-center flex-wrap">
         <span className="hidden sm:inline">info@everonics.in</span>
-        <span className="hidden sm:inline">,</span>
-        <span className="hidden sm:inline">locationtracker21@gmail.com</span>
         <span className="hidden sm:inline">|</span>
         <span>+91 9984024365</span>
-        <span>,</span>
-        <span>+91 8948168024</span>
       </div>
       <div className="flex gap-2">
         {socialLinks.map((s) => (

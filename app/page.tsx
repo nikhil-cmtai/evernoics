@@ -6,6 +6,12 @@ import Testimonial from "@/components/home/testimonial";
 import WhyChooseUs from "@/components/home/why-choose-us";
 import HowWeAre from "@/components/home/how-we-are";
 import VehicleMarquee from '../components/home/vehicle-marquee';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Location Track",
+  description: "Home Page",
+};
 
 export default function Home() {
   return (

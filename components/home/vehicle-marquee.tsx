@@ -1,17 +1,36 @@
 "use client"
 import React from "react"
 import Image from "next/image"
+
+
 const vehicleImages = [
-  "/LocationTrack/car.webp",
-  "/LocationTrack/truck.jpg",
-  "/LocationTrack/bus.jpg",
-  "/LocationTrack/bike.jpg",
-  "/LocationTrack/tractor.jpg",
-  "/LocationTrack/activa.jpg",
-  // Dummy vehicle images
-  "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80", // jeep
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // truck
-  "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=400&q=80", // bike
+  "/images/1.jpg",
+  "/images/2.jpg",
+  "/images/3.jpg",
+  "/images/4.jpeg",
+  "/images/5.jpg",
+  "/images/6.jpg",
+  "/images/7.jpg",
+  "/images/8.jpg",
+  "/images/9.jpg",
+  "/images/10.png",
+  "/images/11.jpg",
+  "/images/12.jpg",
+  "/images/13.jpg",
+  "/images/14.pgn",
+  "/images/15.jpg",
+  "/images/16.jpg",
+  "/images/17.jpg",
+  "/images/18.jpg",
+  "/images/19.png",
+  "/images/20.jpg",
+  "/images/21.jpg",
+  "/images/22.jpg",
+  "/images/23.jpg",
+  "/images/24.png",
+  "/images/25.png",
+  "/images/26.jpg",
+  "/images/27.png"
 ]
 
 export default function VehicleMarquee() {
@@ -49,9 +68,9 @@ export default function VehicleMarquee() {
                   src={img || "/placeholder.svg"}
                   alt="Vehicle"
                   width={192}
-                  height={128}
-                  className={`w-36 h-24 md:w-48 md:h-32 rounded-2xl border-4 border-white shadow-xl group-hover:scale-110 group-hover:shadow-yellow-400 transition-all duration-300 bg-white
-                    ${img.includes('bike') || img.includes('activa') ? 'object-contain' : 'object-cover'}`}
+                  height={138}
+                  className={`w-38 h-28 md:w-48 md:h-32 rounded-2xl border-4  group-hover:scale-110  transition-all duration-300
+                    ${img.includes('bike') || img.includes('activa') ? 'object-fit' : 'object-contain'}`}
                   loading="lazy"
                 />
                 {/* Glow effect on hover */}
