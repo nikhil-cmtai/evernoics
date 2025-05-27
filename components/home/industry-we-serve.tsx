@@ -160,9 +160,10 @@ export default function IndustriesWeServe() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700"
           >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
-            Industries We Serve
-          </span>          </motion.h2>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
+              Industries We Serve
+            </span>
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

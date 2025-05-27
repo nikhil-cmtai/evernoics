@@ -257,7 +257,7 @@ export default function LocationTrackProcess() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 inline-block">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-600">
+            <span className="bg-clip-text text-transparent bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
               Simple. Smart. Secure.
             </span>
           </h2>

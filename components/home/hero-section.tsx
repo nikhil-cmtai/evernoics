@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCar, FaTruck, FaBus, FaBiking, FaTractor, FaMotorcycle, FaMapMarkerAlt, FaShieldAlt, FaBolt, FaWifi, FaLock, FaRoad, FaUserCheck, FaGasPump, FaCogs, FaStar, FaChartLine, FaExclamationTriangle, FaBell, FaClock, FaSnowflake } from "react-icons/fa";
+import BookDemoModal from './BookDemoModal';
 
 const slides = [
   {
@@ -109,6 +110,7 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   // Auto-advance slides every 6 seconds, pause on hover
@@ -158,6 +160,7 @@ export default function Hero() {
         <motion.button
           whileHover={{ scale: 1.06 }}
           className="px-12 py-4 border-2 border-yellow-400 text-yellow-600 font-bold text-xl bg-white/80 backdrop-blur-md hover:bg-yellow-50 transition-colors shadow-lg rounded-lg"
+          onClick={() => setModalOpen(true)}
         >
           Book Demo
         </motion.button>
@@ -223,6 +226,7 @@ export default function Hero() {
           ))}
         </div>
       </div>
+      <BookDemoModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 } 

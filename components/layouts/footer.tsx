@@ -1,12 +1,12 @@
 'use client'
 
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
-  { href: 'https://www.facebook.com/locationtrack.in/', icon: <FaFacebookF />, label: 'Facebook' },
-  { href: 'https://www.instagram.com/locationtrack.in/', icon: <FaInstagram />, label: 'Instagram' },
-  { href: 'https://www.linkedin.com/company/locationtrack/', icon: <FaLinkedinIn />, label: 'LinkedIn' },
+  { href: 'https://www.facebook.com/locationtrack.in/', icon: <Facebook />, label: 'Facebook' },
+  { href: 'https://www.instagram.com/locationtrack.in/', icon: <Instagram />, label: 'Instagram' },
+  { href: 'https://www.linkedin.com/company/locationtrack/', icon: <Linkedin />, label: 'LinkedIn' },
 ];
 
 const Footer = () => (
@@ -47,7 +47,7 @@ const Footer = () => (
     </div>
     <div className="container mx-auto mt-6 border-t border-white/30 pt-3 px-4">
       <div className="text-sm md:text-base text-center font-bold tracking-wide opacity-90">
-        &copy; {new Date().getFullYear()} Location Tracker. Designed by CMT AI.
+        &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Tracker</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
       </div>
     </div>
   </motion.footer>

@@ -17,7 +17,7 @@ const vehicleImages = [
   "/images/11.jpg",
   "/images/12.jpg",
   "/images/13.jpg",
-  "/images/14.pgn",
+  "/images/14.png",
   "/images/15.jpg",
   "/images/16.jpg",
   "/images/17.jpg",
