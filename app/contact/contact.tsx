@@ -163,8 +163,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                 <p className="text-gray-600">info@everonics.in</p>
-                <p className="text-gray-600">sales@everonics.in</p>
-                <p className="text-gray-600">locationtrack@everonics.in</p>
+                <p className="text-gray-600">locationtracker21@gmail.com</p>
               </motion.div>
 
               <motion.div
@@ -186,7 +185,7 @@ const ContactPage: React.FC = () => {
                   <FaMapMarkerAlt className="text-orange-600 text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
-                <p className="text-gray-600">T-4, Sanjay Gandhi Puram, Lucknow, Uttar Pradesh, 226016</p>
+                <p className="text-gray-600">123 Tech Park, Bangalore, India</p>
               </motion.div>
             </div>
 

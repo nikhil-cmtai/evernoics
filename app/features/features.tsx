@@ -44,7 +44,7 @@ export default function LocationTrackFeatures() {
       color: "from-orange-400 to-orange-600",
       darkColor: "from-orange-500 to-orange-700",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+        "/features/LiveTracking.png",
     },
     {
       icon: <Clock className="w-8 h-8" />,
@@ -59,7 +59,7 @@ export default function LocationTrackFeatures() {
       color: "from-blue-400 to-blue-600",
       darkColor: "from-blue-500 to-blue-700",
       image:
-        "https://images.unsplash.com/photo-1510070009289-b5bc34383727?auto=format&fit=crop&w=400&q=80",
+        "/features/historyPlayback.png",
     },
     {
       icon: <BellRing className="w-8 h-8" />,
@@ -74,7 +74,7 @@ export default function LocationTrackFeatures() {
       color: "from-green-400 to-green-600",
       darkColor: "from-green-500 to-green-700",
       image:
-        "https://images.unsplash.com/photo-1612837017391-5dbb7db46bd0?auto=format&fit=crop&w=400&q=80",
+        "/features/geoFence.png",
     },
     {
       icon: <Power className="w-8 h-8" />,
@@ -90,7 +90,7 @@ export default function LocationTrackFeatures() {
       color: "from-red-400 to-red-600",
       darkColor: "from-red-500 to-red-700",
       image:
-        "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=400&q=80",
+        "/features/remoteImmobilization.png",
     },
     {
       icon: <ShieldCheck className="w-8 h-8" />,
@@ -106,7 +106,7 @@ export default function LocationTrackFeatures() {
       color: "from-purple-400 to-purple-600",
       darkColor: "from-purple-500 to-purple-700",
       image:
-        "https://images.unsplash.com/photo-1574672287236-8c369e1b1070?auto=format&fit=crop&w=400&q=80",
+        "/features/LiveTAdvanced Anti-Theft Protectionracking.png",
     },
     {
       icon: <AlarmClock className="w-8 h-8" />,
@@ -122,23 +122,23 @@ export default function LocationTrackFeatures() {
       color: "from-yellow-400 to-yellow-600",
       darkColor: "from-yellow-500 to-yellow-700",
       image:
-        "https://images.unsplash.com/photo-1549921296-3a40443ed7fa?auto=format&fit=crop&w=400&q=80",
+        "/features/Towing Alert Alarm.png",
     },
-    {
-      icon: <Gauge className="w-8 h-8" />,
-      title: "Speed Monitoring & Alerts",
-      description:
-        "Track vehicle speed in real-time. Set custom speed limits and get alerts when exceeded to ensure driver safety.",
-      points: [
-        "Promote safe driving habits",
-        "Reduce accidents and liabilities",
-        "Generate speed violation reports",
-      ],
-      color: "from-teal-400 to-teal-600",
-      darkColor: "from-teal-500 to-teal-700",
-      image:
-        "https://images.unsplash.com/photo-1524041251042-24c90896e24f?auto=format&fit=crop&w=400&q=80",
-    },
+    // {
+    //   icon: <Gauge className="w-8 h-8" />,
+    //   title: "Speed Monitoring & Alerts",
+    //   description:
+    //     "Track vehicle speed in real-time. Set custom speed limits and get alerts when exceeded to ensure driver safety.",
+    //   points: [
+    //     "Promote safe driving habits",
+    //     "Reduce accidents and liabilities",
+    //     "Generate speed violation reports",
+    //   ],
+    //   color: "from-teal-400 to-teal-600",
+    //   darkColor: "from-teal-500 to-teal-700",
+    //   image:
+    //     "/features/LiveTracking.png",
+    // },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Mobile App Support",
@@ -152,7 +152,7 @@ export default function LocationTrackFeatures() {
       color: "from-indigo-400 to-indigo-600",
       darkColor: "from-indigo-500 to-indigo-700",
       image:
-        "https://images.unsplash.com/photo-1600093463592-8c215b82b94f?auto=format&fit=crop&w=400&q=80",
+        "/features/Mobile app support.png",
     },
     {
       icon: <Lock className="w-8 h-8" />,
@@ -167,7 +167,7 @@ export default function LocationTrackFeatures() {
       color: "from-slate-400 to-slate-600",
       darkColor: "from-slate-500 to-slate-700",
       image:
-        "https://images.unsplash.com/photo-1623053261397-07a55a1b71ed?auto=format&fit=crop&w=400&q=80",
+        "/features/Data security and privacy.png",
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
@@ -182,7 +182,7 @@ export default function LocationTrackFeatures() {
       color: "from-pink-400 to-pink-600",
       darkColor: "from-pink-500 to-pink-700",
       image:
-        "https://images.unsplash.com/photo-1581091012184-5c1281f870a3?auto=format&fit=crop&w=400&q=80",
+        "/features/fleet analytics report.png",
     },
   ];
   
