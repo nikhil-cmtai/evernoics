@@ -50,11 +50,7 @@ export default function VehicleMarquee() {
 
       {/* Marquee container with relative positioning */}
       <div className="relative w-full overflow-hidden">
-        {/* Left blur gradient */}
-        <div className="absolute left-0 top-0 w-64 h-full z-10 bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none"></div>
 
-        {/* Right blur gradient */}
-        <div className="absolute right-0 top-0 w-64 h-full z-10 bg-gradient-to-l from-white via-white/90 to-transparent pointer-events-none"></div>
 
         {/* Marquee animation */}
         <div
