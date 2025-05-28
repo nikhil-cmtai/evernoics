@@ -69,7 +69,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-2xl md:text-3xl font-semibold mb-6 text-gray-800"
+          className="text-xl md:text-2xl font-semibold mb-6 text-gray-800"
         >
           Anytime, Anywhere With <span className="text-[var(--color-accent)]">LocationTrack</span>
         </motion.h2>
