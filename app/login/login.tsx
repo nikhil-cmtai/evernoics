@@ -149,18 +149,6 @@ const LoginPage: React.FC = () => {
               <h1>Let&apos;s Login</h1>
             </motion.button>
           </form>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="mt-6 text-center text-sm text-gray-600"
-          >
-            Don&apos;t have an account?{' '}
-            <a href="#" className="font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)]">
-              Sign up
-            </a>
-          </motion.p>
         </div>
       </motion.div>
     </motion.section>
