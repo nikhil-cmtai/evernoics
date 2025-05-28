@@ -36,16 +36,33 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
       return;
     }
     setLoading(true);
-    // Simulate API
-    setTimeout(() => {
-      setLoading(false);
-      setMessage('Thank you! We will contact you soon.');
-      setForm(initialForm);
-      setTimeout(() => {
-        setMessage('');
-        onClose();
-      }, 1000);
-    }, 1000);
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: 'sid99310@gmail.com',
+          subject: 'Book Demo Request',
+          text: `Owner: ${form.owner}\nMobile: ${form.mobile}\nAddress: ${form.address}\nNumber of Vehicles: ${form.vehicles}\nVehicle Type: ${form.type}`,
+          html: `<b>Owner:</b> ${form.owner}<br/><b>Mobile:</b> ${form.mobile}<br/><b>Address:</b> ${form.address}<br/><b>Number of Vehicles:</b> ${form.vehicles}<br/><b>Vehicle Type:</b> ${form.type}`,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setMessage('Thank you! We will contact you soon.');
+        setForm(initialForm);
+        setTimeout(() => {
+          setMessage('');
+          onClose();
+        }, 1000);
+      } else {
+        setMessage(data.error || 'Failed to send message.');
+      }
+    } catch (err) {
+      console.error('Error sending message:', err);
+      setMessage('Failed to send message.');
+    }
+    setLoading(false);
   };
 
   return (

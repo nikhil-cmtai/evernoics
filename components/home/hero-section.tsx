@@ -61,9 +61,9 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
           className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary)] mb-4 drop-shadow-sm"
         >
-          <span className="text-[var(--color-accent)]">Secure</span>{' '}
-          <span className="text-black">Track</span>{' '}
-          <span className="text-[var(--color-accent)]">Control</span>
+          <span className="text-orange-500">Secure</span>{' '}
+          <span className="text-gray-900">Track</span>{' '}
+          <span className="text-orange-500">Control</span>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-xl md:text-2xl font-semibold mb-6 text-gray-800"
         >
-          Anytime, Anywhere With <span className="text-[var(--color-accent)]">LocationTrack</span>
+          Anytime, Anywhere With <span className="text-orange-500">LocationTrack</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}

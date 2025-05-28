@@ -147,7 +147,7 @@ const FloatingDataPoints = () => {
 }
 
 const SplitFeatures: React.FC = () => (
-  <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+  <section className="py-20 px-4 overflow-hidden">
     <div className="max-w-7xl mx-auto">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

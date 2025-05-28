@@ -108,7 +108,7 @@ export default function LocationTrackFeatures() {
       color: "from-purple-400 to-purple-600",
       darkColor: "from-purple-500 to-purple-700",
       image:
-        "/features/LiveTAdvanced Anti-Theft Protectionracking.png",
+        "/features/Advanced Anti-Theft Protection.png",
     },
     {
       icon: <AlarmClock className="w-8 h-8" />,
@@ -184,7 +184,7 @@ export default function LocationTrackFeatures() {
       ],
       color: "from-lime-400 to-lime-600",
       darkColor: "from-lime-500 to-lime-700",
-      image: "/features/locate-vehicle.png", // Replace with actual image path
+      image: "/features/Locate Vehicle.png", // Replace with actual image path
     },
     {
       icon: <Share2 className="w-8 h-8" />,
@@ -199,7 +199,7 @@ export default function LocationTrackFeatures() {
       ],
       color: "from-rose-400 to-rose-600",
       darkColor: "from-rose-500 to-rose-700",
-      image: "/features/share-location.png", // Replace with actual image path
+      image: "/features/share location.png", // Replace with actual image path
     },
     {
       icon: <Navigation className="w-8 h-8" />,
@@ -214,7 +214,7 @@ export default function LocationTrackFeatures() {
       ],
       color: "from-cyan-400 to-cyan-600",
       darkColor: "from-cyan-500 to-cyan-700",
-      image: "/features/follow-me.png", // Replace with actual image path
+      image: "/features/follow me.png", // Replace with actual image path
     },
   ];
   

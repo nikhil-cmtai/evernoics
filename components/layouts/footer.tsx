@@ -16,8 +16,9 @@ const Footer = () => (
     transition={{ duration: 0.7, ease: 'easeOut' }}
     className="w-full bg-[var(--color-primary)] text-white pt-8 pb-4 mt-10 shadow-inner"
   >
-    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 gap-4">
-      <div className="flex gap-4 mb-4 md:mb-0">
+    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4 md:gap-0">
+      {/* Social Icons Left */}
+      <div className="flex gap-4 order-1 md:order-none w-full md:w-auto justify-center md:justify-start mb-4 md:mb-0">
         {socialLinks.map((s) => (
           <motion.a
             key={s.label}
@@ -32,14 +33,16 @@ const Footer = () => (
           </motion.a>
         ))}
       </div>
-      <div className="flex gap-6 font-semibold">
+      {/* Copyright Center */}
+      <div className="flex-1 order-3 md:order-none w-full md:w-auto flex justify-center items-center">
+        <div className="text-sm md:text-base text-center font-bold tracking-wide opacity-90">
+          &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Track</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
+        </div>
+      </div>
+      {/* Terms/Privacy Right */}
+      <div className="flex gap-6 font-semibold order-2 md:order-none w-full md:w-auto justify-center md:justify-end">
         <a href="/terms" className="hover:text-[var(--color-accent)] transition">Terms</a>
         <a href="/privacy-policy" className="hover:text-[var(--color-accent)] transition">Privacy Policy</a>
-      </div>
-    </div>
-    <div className="container mx-auto mt-6 border-t border-white/30 pt-3 px-4">
-      <div className="text-sm md:text-base text-center font-bold tracking-wide opacity-90">
-        &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Track</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
       </div>
     </div>
   </motion.footer>

@@ -11,12 +11,36 @@ const ContactPage: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    // Send form data to sid99310@gmail.com (backend integration required)
-    console.log(formData);
+    setStatus('');
+    setLoading(true);
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: 'sid99310@gmail.com',
+          subject: formData.subject,
+          text: formData.message,
+          html: `<b>Name:</b> ${formData.name}<br/><b>Email:</b> ${formData.email}<br/><b>Message:</b><br/>${formData.message}`,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus(data.error || 'Failed to send message.');
+      }
+    } catch (err) {
+      console.error('Error sending message:', err);
+      setStatus('Failed to send message.');
+    }
+    setLoading(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -128,9 +152,13 @@ const ContactPage: React.FC = () => {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                disabled={loading}
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </motion.button>
+              {status && (
+                <div className={`text-center text-sm mt-2 ${status.includes('success') ? 'text-green-600' : 'text-red-500'}`}>{status}</div>
+              )}
             </form>
           </motion.div>
 
@@ -209,3 +237,4 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
+
