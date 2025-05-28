@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -15,6 +16,7 @@ const navLinks = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <motion.header
@@ -35,7 +37,7 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-1 py-0.5 transition hover:text-[var(--color-accent)] hover:underline underline-offset-4"
+                className={`px-1 py-0.5 transition hover:text-[var(--color-accent)] hover:underline underline-offset-4 ${pathname === link.href ? 'border-b-2 border-amber-400' : ''}`}
               >
                 {link.label}
               </a>
@@ -90,7 +92,7 @@ const Header = () => {
                     <a
                       key={link.href}
                       href={link.href}
-                      className="text-lg font-medium text-gray-700 hover:text-[var(--color-primary)] transition py-3 border-b border-gray-100"
+                      className={`text-lg font-medium text-gray-700 hover:text-[var(--color-primary)] transition py-3 border-b border-gray-100 ${pathname === link.href ? 'border-b-2 border-amber-400' : ''}`}
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.label}
