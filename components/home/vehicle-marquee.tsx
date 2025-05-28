@@ -1,6 +1,7 @@
 "use client"
 import React from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 
 const vehicleImages = [
@@ -83,9 +84,11 @@ export default function VehicleMarquee() {
 
       {/* Call to action button */}
       <div className="flex justify-center mt-12">
-        <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-full shadow-lg hover:shadow-orange-300/50 transition-all duration-300 transform hover:-translate-y-1">
-          Start Tracking Now
-        </button>
+        <Link href="/login">
+          <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-medium rounded-full shadow-lg hover:shadow-orange-300/50 transition-all duration-300 transform hover:-translate-y-1">
+            Start Tracking Now
+          </button>
+        </Link>
       </div>
 
       <style jsx>{`

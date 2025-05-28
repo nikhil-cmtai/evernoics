@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                 <p className="text-gray-600">info@everonics.in</p>
-                <p className="text-gray-600">locationtracker@everonics.in</p>
+                <p className="text-gray-600">locationtrack@everonics.in</p>
                 <p className="text-gray-600">sales@everonics.in</p>
               </motion.div>
 
