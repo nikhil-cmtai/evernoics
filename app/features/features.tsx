@@ -21,6 +21,8 @@ import {
   Power,
   AlarmClock,
   BarChart3,
+  Navigation,
+  Share2,
 } from "lucide-react"
 import Image from "next/image"
 import type { Variants } from 'framer-motion'
@@ -124,21 +126,6 @@ export default function LocationTrackFeatures() {
       image:
         "/features/Towing Alert Alarm.png",
     },
-    // {
-    //   icon: <Gauge className="w-8 h-8" />,
-    //   title: "Speed Monitoring & Alerts",
-    //   description:
-    //     "Track vehicle speed in real-time. Set custom speed limits and get alerts when exceeded to ensure driver safety.",
-    //   points: [
-    //     "Promote safe driving habits",
-    //     "Reduce accidents and liabilities",
-    //     "Generate speed violation reports",
-    //   ],
-    //   color: "from-teal-400 to-teal-600",
-    //   darkColor: "from-teal-500 to-teal-700",
-    //   image:
-    //     "/features/LiveTracking.png",
-    // },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Mobile App Support",
@@ -183,6 +170,51 @@ export default function LocationTrackFeatures() {
       darkColor: "from-pink-500 to-pink-700",
       image:
         "/features/fleet analytics report.png",
+    },
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Locate Vehicle",
+      description:
+        "Find your parked vehicle instantly. Whether you’ve forgotten where you parked in a crowded lot or want to know exactly where your vehicle is, this feature helps you locate it in real-time with precise distance and direction.",
+      points: [
+        "Pinpoints exact parking location",
+        "Shows distance from your current position",
+        "Great for large parking areas, malls, and unfamiliar places",
+        "Navigate directly to your vehicle",
+      ],
+      color: "from-lime-400 to-lime-600",
+      darkColor: "from-lime-500 to-lime-700",
+      image: "/features/locate-vehicle.png", // Replace with actual image path
+    },
+    {
+      icon: <Share2 className="w-8 h-8" />,
+      title: "Share Location",
+      description:
+        "Easily share your vehicle's location with anyone. Whether it’s for safety, coordination, or pickup, this feature allows you to send your live vehicle location to family, friends, or colleagues via a secure link.",
+      points: [
+        "Share real-time vehicle location with just a tap",
+        "Set time limits for shared access",
+        "No app installation needed on receiver's end",
+        "Ideal for emergencies, pickups, or coordination",
+      ],
+      color: "from-rose-400 to-rose-600",
+      darkColor: "from-rose-500 to-rose-700",
+      image: "/features/share-location.png", // Replace with actual image path
+    },
+    {
+      icon: <Navigation className="w-8 h-8" />,
+      title: "Follow Me",
+      description:
+        "Let others follow your vehicle in real time. Perfect for group travel or convoys, this feature allows others to see your vehicle's movement live so they can follow the same route without confusion.",
+      points: [
+        "Live vehicle movement tracking for others",
+        "Helps in family/group travel or delivery handovers",
+        "Reduces chances of getting lost",
+        "No need to explain routes or give directions repeatedly",
+      ],
+      color: "from-cyan-400 to-cyan-600",
+      darkColor: "from-cyan-500 to-cyan-700",
+      image: "/features/follow-me.png", // Replace with actual image path
     },
   ];
   

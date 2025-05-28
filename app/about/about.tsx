@@ -129,7 +129,7 @@ const AboutPage: React.FC = () => {
         {/* 2. Why Choose Us */}
         <motion.div
           variants={containerVariants}
-          className="mb-14 w-full flex flex-col items-center"
+          className="mb-24 w-full flex flex-col items-center"
         >
           <motion.h2
             variants={cardVariants}
@@ -284,8 +284,9 @@ const AboutPage: React.FC = () => {
         </motion.div>
 
         {/* 3. Our All-in-One Platform */}
-        <motion.div variants={containerVariants} className="mb-14 w-full">
-          <motion.h2 variants={cardVariants} className="text-2xl mb-8 font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500-8">
+        <motion.div variants={containerVariants} className="mb-24 w-full">
+          <motion.h2 variants={cardVariants}
+            className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
             Our All-in-One Platform
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -312,7 +313,8 @@ const AboutPage: React.FC = () => {
 
         {/* 5. Industries We Serve */}
         <motion.div variants={containerVariants} className="mb-14 w-full">
-          <motion.h2 variants={cardVariants} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 mb-8">
+          <motion.h2 variants={cardVariants}
+            className="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
             Industries We Serve
           </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

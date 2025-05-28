@@ -70,7 +70,6 @@ export default function LocationTrackProcess() {
         "Our certified technicians install high-performance GPS tracking devices into your vehicle or equipment. Installation is quick, clean, and does not tamper with your vehicle&apos;s original system.",
       icon: <Cpu className="w-full h-full" />,
       benefits: [
-        "Plug-n-play options available",
         "Tamper-proof & hidden installation",
         "Professional support for all vehicle types",
       ],

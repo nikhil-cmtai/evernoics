@@ -32,14 +32,6 @@ const Footer = () => (
           </motion.a>
         ))}
       </div>
-      <div className="flex flex-col gap-1 text-sm md:text-base font-semibold text-white/90 items-center md:items-end">
-        <div>
-          <span className="font-bold">Email:</span> info@everonics.in
-        </div>
-        <div>
-          <span className="font-bold">Contact:</span> +91 9984024365
-        </div>
-      </div>
       <div className="flex gap-6 font-semibold">
         <a href="/terms" className="hover:text-[var(--color-accent)] transition">Terms</a>
         <a href="/privacy-policy" className="hover:text-[var(--color-accent)] transition">Privacy Policy</a>
@@ -47,7 +39,7 @@ const Footer = () => (
     </div>
     <div className="container mx-auto mt-6 border-t border-white/30 pt-3 px-4">
       <div className="text-sm md:text-base text-center font-bold tracking-wide opacity-90">
-        &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Tracker</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
+        &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Track</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
       </div>
     </div>
   </motion.footer>

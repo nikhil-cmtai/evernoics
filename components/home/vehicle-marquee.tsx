@@ -55,7 +55,7 @@ export default function VehicleMarquee() {
         {/* Marquee animation */}
         <div
           className="marquee flex items-center gap-8 w-max animate-marquee hover:[animation-play-state:paused] transition-all duration-300"
-          style={{ animationDuration: "28s", animationTimingFunction: "linear", animationIterationCount: "infinite" }}
+          style={{ animationDuration: "90s", animationTimingFunction: "linear", animationIterationCount: "infinite" }}
         >
           {vehicleImages.concat(vehicleImages).map((img, idx) => (
             <div key={img + idx} className="flex flex-col items-center group">
@@ -72,29 +72,6 @@ export default function VehicleMarquee() {
                 {/* Glow effect on hover */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-orange-400 rounded-2xl blur opacity-0 group-hover:opacity-70 transition duration-300 -z-10"></div>
               </div>
-
-              {/* Optional vehicle type label */}
-              <span className="mt-3 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-800 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {idx % 10 === 0
-                  ? "Car"
-                  : idx % 10 === 1
-                    ? "Truck"
-                    : idx % 10 === 2
-                      ? "Bus"
-                      : idx % 10 === 3
-                        ? "Bike"
-                        : idx % 10 === 4
-                          ? "Tractor"
-                          : idx % 10 === 5
-                            ? "Scooter"
-                            : idx % 10 === 6
-                              ? "Jeep"
-                              : idx % 10 === 7
-                                ? "Sports Car"
-                                : idx % 10 === 8
-                                  ? "Heavy Truck"
-                                  : "Motorcycle"}
-              </span>
             </div>
           ))}
         </div>
