@@ -13,7 +13,6 @@ const initialForm = {
   address: '',
   vehicles: '',
   type: '',
-  email: '',
 };
 
 const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
@@ -98,17 +97,6 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
               onChange={handleChange}
               className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               placeholder="Enter mobile number"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
-              placeholder="Enter email"
             />
           </div>
           <div>
