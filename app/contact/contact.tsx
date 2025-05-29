@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaLinkedin, FaInstagram, FaFacebookF } from 'react-icons/fa';
 
@@ -13,6 +13,20 @@ const ContactPage: React.FC = () => {
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    if (status) {
+      timeoutId = setTimeout(() => {
+        setStatus('');
+      }, 3000);
+    }
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
