@@ -23,7 +23,7 @@ const ContactPage: React.FC = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'sid99310@gmail.com',
+          to: 'locationtracker21@gmail.com',
           subject: formData.subject,
           text: formData.message,
           html: `<b>Name:</b> ${formData.name}<br/><b>Email:</b> ${formData.email}<br/><b>Message:</b><br/>${formData.message}`,
@@ -180,6 +180,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                 <p className="text-gray-600">+91 9984024365</p>
+                <p className="text-gray-600">+91 8604669409</p>
               </motion.div>
 
               <motion.div

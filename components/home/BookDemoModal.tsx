@@ -13,6 +13,7 @@ const initialForm = {
   address: '',
   vehicles: '',
   type: '',
+  email: '',
 };
 
 const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
@@ -41,7 +42,7 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          to: 'sid99310@gmail.com',
+          to: 'locationtracker21@gmail.com',
           subject: 'Book Demo Request',
           text: `Owner: ${form.owner}\nMobile: ${form.mobile}\nAddress: ${form.address}\nNumber of Vehicles: ${form.vehicles}\nVehicle Type: ${form.type}`,
           html: `<b>Owner:</b> ${form.owner}<br/><b>Mobile:</b> ${form.mobile}<br/><b>Address:</b> ${form.address}<br/><b>Number of Vehicles:</b> ${form.vehicles}<br/><b>Vehicle Type:</b> ${form.type}`,
@@ -66,8 +67,8 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-      <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 overflow-y-auto max-h-70vh">
+      <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative animate-fadeIn max-h-70vh">
         <button
           className="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold"
           onClick={onClose}
@@ -97,6 +98,17 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
               onChange={handleChange}
               className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               placeholder="Enter mobile number"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              placeholder="Enter email"
             />
           </div>
           <div>
