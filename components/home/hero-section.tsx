@@ -8,7 +8,7 @@ import BookDemoModal from './BookDemoModal';
 const commonTags = [
   { label: "Live Tracking", icon: <FaWifi size={18} />, style: "top-4 left-32", onImage: false },
   { label: "History Playback", icon: <FaRoad size={18} />, style: "top-4 right-8", onImage: false },
-  { label: "Geo-Fence", icon: <FaMapMarkerAlt size={18} />, style: "top-24 left-4", onImage: false },
+  { label: "Geo Fencing", icon: <FaMapMarkerAlt size={18} />, style: "top-24 left-4", onImage: false },
   { label: "Remote Immobilization", icon: <FaBolt size={18} />, style: "top-24 right-4", onImage: false },
   { label: "Anti-Theft Protection", icon: <FaLock size={18} />, style: "bottom-24 left-8", onImage: false },
   { label: "Towing Alert", icon: <FaExclamationTriangle size={18} />, style: "bottom-24 right-8", onImage: false },
@@ -16,7 +16,7 @@ const commonTags = [
   { label: "Share Location", icon: <FaShareAlt size={18} />, style: "bottom-8 right-32", onImage: false },
   { label: "Locate Vehicle", icon: <FaCar size={18} />, style: "top-1/2 right-2", onImage: true },
   { label: "24*7 Technical Support", icon: <FaStar size={18} />, style: "top-2 left-1/2 -translate-x-1/2", onImage: true },
-  { label: "Driving Behaviour", icon: <FaChartLine size={18} />, style: "top-1/2 left-2", onImage: true },
+  { label: "Driving behaviour", icon: <FaChartLine size={18} />, style: "top-1/2 left-2", onImage: true },
 ];
 
 const slides = [

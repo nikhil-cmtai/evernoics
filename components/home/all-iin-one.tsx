@@ -10,7 +10,7 @@ const features = [
   {
     icon: <FaLaptopCode size={40} />,
     title: "Vehicle Tracking Software",
-    desc: "Monitor and manage your entire fleet using our robust and easy-to-use platform. Get real-time updates, trip history, driver behavior, and insightful reports at your fingertips.",
+    desc: "Monitor and manage your entire fleet using our robust and easy-to-use platform. Get real-time updates, trip history, driver behaviour, and insightful reports at your fingertips.",
     color: "from-orange-400 via-orange-500 to-orange-600",
   },
   {

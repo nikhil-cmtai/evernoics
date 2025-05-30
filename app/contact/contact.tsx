@@ -33,22 +33,35 @@ const ContactPage: React.FC = () => {
     setStatus('');
     setLoading(true);
     try {
-      const res = await fetch('/api/send-mail', {
+      // Send mail to admin and user
+      const adminMail = fetch('/api/send-mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           to: 'locationtracker21@gmail.com',
           subject: formData.subject,
-          text: formData.message,
-          html: `<b>Name:</b> ${formData.name}<br/><b>Email:</b> ${formData.email}<br/><b>Message:</b><br/>${formData.message}`,
+          text: `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\nMessage: ${formData.message}`,
+          html: `<b>Name:</b> ${formData.name}<br/><b>Email:</b> ${formData.email}<br/><b>Subject:</b> ${formData.subject}<br/><b>Message:</b><br/>${formData.message}`,
         }),
       });
-      const data = await res.json();
-      if (res.ok) {
+      const userMail = fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: formData.email,
+          subject: 'Thank you for contacting us!',
+          text: `Dear ${formData.name},\nThank you for reaching out to Location Track. We have received your message and will get back to you soon.`,
+          html: `<b>Dear ${formData.name},</b><br/>Thank you for reaching out to Location Track. We have received your message and will get back to you soon.`,
+        }),
+      });
+      const [adminRes, userRes] = await Promise.all([adminMail, userMail]);
+      const adminData = await adminRes.json();
+      const userData = await userRes.json();
+      if (adminRes.ok && userRes.ok) {
         setStatus('Message sent successfully!');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        setStatus(data.error || 'Failed to send message.');
+        setStatus(adminData.error || userData.error || 'Failed to send message.');
       }
     } catch (err) {
       console.error('Error sending message:', err);

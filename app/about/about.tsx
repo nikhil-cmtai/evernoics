@@ -34,7 +34,7 @@ const platformFeatures = [
   {
     icon: <FaCarAlt className="text-blue-500 text-2xl" />,
     title: "Vehicle Tracking Software",
-    desc: "Real-time tracking, trip history, driver behavior, reports — sab kuch ek jagah."
+    desc: "Real-time tracking, trip history, driver behaviour, reports — sab kuch ek jagah."
   },
   {
     icon: <FaSatelliteDish className="text-green-500 text-2xl" />,

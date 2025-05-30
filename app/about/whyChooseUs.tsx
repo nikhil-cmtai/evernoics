@@ -17,7 +17,7 @@ export const whyChooseUs = [
   {
     icon: <FaChartBar className="text-purple-500 text-2xl" />,
     title: "Smart Data Insights",
-    desc: "Driver behavior, fuel usage, fleet performance — sab kuch ka detailed analytics milta hai."
+    desc: "Driver behaviour, fuel usage, fleet performance — sab kuch ka detailed analytics milta hai."
   },
   {
     icon: <MdDevices className="text-pink-500 text-2xl" />,

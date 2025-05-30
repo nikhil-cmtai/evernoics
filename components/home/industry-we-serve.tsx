@@ -34,7 +34,7 @@ const industries = [
   {
     icon: <FaUserAlt size={28} />,
     title: "Personal Use",
-    desc: "Track your personal car or bike in real-time, receive driving behavior insights, and protect your loved ones with safety-first technology.",
+    desc: "Track your personal car or bike in real-time, receive driving behaviour insights, and protect your loved ones with safety-first technology.",
   },
   {
     icon: <FaCarSide size={28} />,

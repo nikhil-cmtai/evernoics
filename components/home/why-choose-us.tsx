@@ -22,7 +22,7 @@ const features = [
   {
     icon: <FaLock size={28} className="text-yellow-500" />,
     title: "Top-Notch Security",
-    desc: "Protect your assets with geofencing, immobilization, and instant alerts.",
+    desc: "Protect your assets with geo fencing, immobilization, and instant alerts.",
   },
   {
     icon: <FaUserShield size={28} className="text-yellow-500" />,

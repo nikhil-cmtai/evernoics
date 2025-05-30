@@ -36,7 +36,7 @@ const Footer = () => (
       {/* Copyright Center */}
       <div className="flex-1 order-3 md:order-none w-full md:w-auto flex justify-center items-center">
         <div className="text-sm md:text-base text-center font-bold tracking-wide opacity-90">
-          &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Track</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonics Solutions Pvt Ltd</a>.
+          &copy; {new Date().getFullYear()} <a href="https://locationtrack.in/features" className="font-bold hover:text-[var(--color-accent)] transition">Location Track</a>. Designed by <a href="https://everonics.in" className="font-bold hover:text-[var(--color-accent)] underline transition">Everonic Solutions Pvt Ltd</a>.
         </div>
       </div>
       {/* Terms/Privacy Right */}

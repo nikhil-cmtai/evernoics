@@ -13,6 +13,7 @@ const initialForm = {
   address: '',
   vehicles: '',
   type: '',
+  email: '',
 };
 
 const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
@@ -31,13 +32,14 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
     e.preventDefault();
     setMessage('');
     // Simple validation
-    if (!form.owner || !form.mobile || !form.address || !form.vehicles || !form.type) {
+    if (!form.owner || !form.mobile || !form.address || !form.vehicles || !form.type || !form.email) {
       setMessage('Please fill all fields.');
       return;
     }
     setLoading(true);
     try {
-      const res = await fetch('/api/send-mail', {
+      // Send mail to admin and user
+      const adminMail = fetch('/api/send-mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -47,8 +49,20 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           html: `<b>Owner:</b> ${form.owner}<br/><b>Mobile:</b> ${form.mobile}<br/><b>Address:</b> ${form.address}<br/><b>Number of Vehicles:</b> ${form.vehicles}<br/><b>Vehicle Type:</b> ${form.type}`,
         }),
       });
-      const data = await res.json();
-      if (res.ok) {
+      const userMail = fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: form.email,
+          subject: 'Thank you for booking a demo!',
+          text: `Dear ${form.owner},\nThank you for booking a demo with Location Track. We have received your request and will contact you soon.`,
+          html: `<b>Dear ${form.owner},</b><br/>Thank you for booking a demo with Location Track. We have received your request and will contact you soon.`,
+        }),
+      });
+      const [adminRes, userRes] = await Promise.all([adminMail, userMail]);
+      const adminData = await adminRes.json();
+      const userData = await userRes.json();
+      if (adminRes.ok && userRes.ok) {
         setMessage('Thank you! We will contact you soon.');
         setForm(initialForm);
         setTimeout(() => {
@@ -56,7 +70,7 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           onClose();
         }, 1000);
       } else {
-        setMessage(data.error || 'Failed to send message.');
+        setMessage(adminData.error || userData.error || 'Failed to send message.');
       }
     } catch (err) {
       console.error('Error sending message:', err);
@@ -97,6 +111,17 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
               onChange={handleChange}
               className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
               placeholder="Enter mobile number"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Mobile</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              placeholder="Enter email address"
             />
           </div>
           <div>

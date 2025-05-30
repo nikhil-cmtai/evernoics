@@ -67,7 +67,7 @@ export default function LocationTrackProcess() {
       number: 1,
       title: "Device Installation",
       description:
-        "Our certified technicians install high-performance GPS tracking devices into your vehicle or equipment. Installation is quick, clean, and does not tamper with your vehicle&apos;s original system.",
+        "Our certified technicians install high-performance GPS tracking devices into your vehicle or equipment. Installation is quick, clean, and does not tamper with your vehicle original system.",
       icon: <Cpu className="w-full h-full" />,
       benefits: [
         "Tamper-proof & hidden installation",
@@ -80,7 +80,7 @@ export default function LocationTrackProcess() {
       number: 2,
       title: "Real-Time Data Collection",
       description:
-        "Once installed, the device starts collecting live data from your vehicle including location, speed, ignition status, fuel usage, engine hours, and driving behavior (harsh braking, overspeeding, etc.)",
+        "Once installed, the device starts collecting live data from your vehicle including location, speed, ignition status, fuel usage, engine hours, and driving behaviour (harsh braking, over speeding, etc.)",
       icon: <Smartphone className="w-full h-full" />,
       subItems: [
         { icon: <MapPin size={18} />, text: "Location" },
@@ -88,7 +88,7 @@ export default function LocationTrackProcess() {
         { icon: <Power size={18} />, text: "Ignition status" },
         { icon: <Droplet size={18} />, text: "Fuel usage" },
         { icon: <Clock size={18} />, text: "Engine hours" },
-        { icon: <AlertTriangle size={18} />, text: "Driving behavior" },
+        { icon: <AlertTriangle size={18} />, text: "Driving behaviour" },
       ],
       footer: "All this data is securely transmitted to our cloud servers using 4G/2G networks.",
       color: "from-orange-300 via-orange-400 to-orange-500",
@@ -115,7 +115,7 @@ export default function LocationTrackProcess() {
         { icon: <AlertTriangle size={18} />, text: "Get alerts & notifications" },
         { icon: <BarChart3 size={18} />, text: "Download reports" },
         { icon: <MapPin size={18} />, text: "Manage geofences" },
-        { icon: <AlertTriangle size={18} />, text: "Monitor driver behavior" },
+        { icon: <AlertTriangle size={18} />, text: "Monitor driver behaviour" },
         { icon: <Zap size={18} />, text: "Set custom rules" },
       ],
       color: "from-orange-400 via-orange-500 to-orange-600",
@@ -425,7 +425,7 @@ export default function LocationTrackProcess() {
             <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl shadow-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Summary:</h3>
               <p className="text-lg">
-                LocationTrack works in 6 simple steps &mdash; Install &rarr; Track &rarr; Analyze &rarr; Control &rarr; Automate &rarr; Support. It&apos;s
+                LocationTrack works in 6 simple steps &mdash; Install &rarr; Track &rarr; Analyse &rarr; Control &rarr; Automate &rarr; Support. It&apos;s
                 the easiest way to manage your vehicles smartly and securely.
               </p>
 
