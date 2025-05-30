@@ -13,6 +13,18 @@ const ContactPage: React.FC = () => {
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
+  const [errors, setErrors] = useState<{ name?: string; mobile?: string; email?: string }>({});
+
+  useEffect(() => {
+    const newErrors: { name?: string; mobile?: string; email?: string } = {};
+    if (formData.name && !/^[A-Za-z ]+$/.test(formData.name)) {
+      newErrors.name = 'Name should contain only alphabets and spaces.';
+    }
+    if (formData.email && !/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,})$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+    setErrors(newErrors);
+  }, [formData.name, formData.email]);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
@@ -31,6 +43,14 @@ const ContactPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('');
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus('Please fill all fields.');
+      return;
+    }
+    if (errors.name || errors.email) {
+      setStatus(errors.name || errors.email || 'Please fix the errors.');
+      return;
+    }
     setLoading(true);
     try {
       // Send mail to admin and user
@@ -130,9 +150,15 @@ const ContactPage: React.FC = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500' : 'border-gray-200'} focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all`}
                     placeholder="John Doe"
+                    autoComplete="off"
+                    onBeforeInput={e => {
+                      const inputEvent = e as unknown as InputEvent;
+                      if (!/^[A-Za-z ]$/.test(inputEvent.data || '')) e.preventDefault();
+                    }}
                   />
+                  {errors.name && <div className="text-red-500 text-xs mt-1">{errors.name}</div>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
@@ -143,9 +169,11 @@ const ContactPage: React.FC = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500' : 'border-gray-200'} focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all`}
                     placeholder="john@example.com"
+                    autoComplete="off"
                   />
+                  {errors.email && <div className="text-red-500 text-xs mt-1">{errors.email}</div>}
                 </div>
               </div>
               <div className="space-y-2">

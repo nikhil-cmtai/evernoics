@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface BookDemoModalProps {
   open: boolean;
@@ -20,6 +20,21 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState<{ owner?: string; mobile?: string; email?: string }>({});
+
+  useEffect(() => {
+    const newErrors: { owner?: string; mobile?: string; email?: string } = {};
+    if (form.owner && !/^[A-Za-z ]+$/.test(form.owner)) {
+      newErrors.owner = 'Name should contain only alphabets and spaces.';
+    }
+    if (form.mobile && !/^\d{10}$/.test(form.mobile)) {
+      newErrors.mobile = 'Mobile number must be exactly 10 digits.';
+    }
+    if (form.email && !/^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,})$/.test(form.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+    setErrors(newErrors);
+  }, [form.owner, form.mobile, form.email]);
 
   if (!open) return null;
 
@@ -31,9 +46,13 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage('');
-    // Simple validation
+    // Validation
     if (!form.owner || !form.mobile || !form.address || !form.vehicles || !form.type || !form.email) {
       setMessage('Please fill all fields.');
+      return;
+    }
+    if (errors.owner || errors.mobile || errors.email) {
+      setMessage(errors.owner || errors.mobile || errors.email || 'Please fix the errors.');
       return;
     }
     setLoading(true);
@@ -94,35 +113,50 @@ const BookDemoModal: React.FC<BookDemoModalProps> = ({ open, onClose }) => {
           <div>
             <label className="block text-sm font-medium mb-1">Owner Name</label>
             <input
-              type="text"
               name="owner"
               value={form.owner}
               onChange={handleChange}
-              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              className={`w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] ${errors.owner ? 'border-red-500' : ''}`}
               placeholder="Enter owner name"
+              autoComplete="off"
+              onBeforeInput={e => {
+                const inputEvent = e as unknown as InputEvent;
+                if (!/^[A-Za-z ]$/.test(inputEvent.data || '')) e.preventDefault();
+              }}
             />
+            {errors.owner && <div className="text-red-500 text-xs mt-1">{errors.owner}</div>}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Mobile</label>
             <input
-              type="tel"
               name="mobile"
               value={form.mobile}
               onChange={handleChange}
-              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              className={`w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] ${errors.mobile ? 'border-red-500' : ''}`}
               placeholder="Enter mobile number"
+              autoComplete="off"
+              inputMode="numeric"
+              maxLength={10}
+              onBeforeInput={e => {
+                const inputEvent = e as unknown as InputEvent;
+                if (!/^[0-9]$/.test(inputEvent.data || '')) e.preventDefault();
+                if (form.mobile.length >= 10) e.preventDefault();
+              }}
             />
+            {errors.mobile && <div className="text-red-500 text-xs mt-1">{errors.mobile}</div>}
           </div>
           <div>
-            <label className="block text-sm font-medium mb-1">Mobile</label>
+            <label className="block text-sm font-medium mb-1">Email</label>
             <input
-              type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              className={`w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] ${errors.email ? 'border-red-500' : ''}`}
               placeholder="Enter email address"
+              autoComplete="off"
+              type="email"
             />
+            {errors.email && <div className="text-red-500 text-xs mt-1">{errors.email}</div>}
           </div>
           <div>
             <label className="block text-sm font-medium mb-1">Address</label>

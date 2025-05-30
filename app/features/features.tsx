@@ -677,14 +677,6 @@ export default function LocationTrackFeatures() {
               in one place.
             </p>
 
-            <motion.div className="mt-6 flex justify-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <a
-                href="#explore-features"
-                className="bg-white text-orange-600 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Explore All Features
-              </a>
-            </motion.div>
           </div>
         </motion.div>
       </div>
